@@ -1,13 +1,18 @@
-site_title: "SciNeW - Scientific News and Insights"
+title: "SciNeW - Scientific News and Insights"
 author: "SciNeW Research Team"
 description: "A blog-like website showcasing news, insights, publications, and results of the SciNeW research project."
-base_url: "https://www.scinew-website.com"
-theme: "default"
+baseurl: "" # Leave empty for GitHub Pages
+url: "https://<your-github-username>.github.io" # Replace <your-github-username> with your GitHub username
+theme: "jekyll-theme-minimal" # Use a GitHub Pages-supported theme
 language: "en"
+
+# Social media links
 social_media:
   twitter: "https://twitter.com/scinew"
   facebook: "https://facebook.com/scinew"
   linkedin: "https://linkedin.com/company/scinew"
+
+# Navigation links
 navigation:
   - title: "Home"
     url: "/index.html"
