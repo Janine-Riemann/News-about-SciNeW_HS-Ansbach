@@ -1,7 +1,7 @@
 title: "SciNeW - Scientific News and Insights"
 author: "SciNeW Research Team"
 description: "A blog-like website showcasing news, insights, publications, and results of the SciNeW research project."
-baseurl: "https://janine-riemann.github.io/News-about-SciNeW_HS-Ansbach/" # Leave empty for GitHub Pages
+baseurl: "/News-about-SciNeW_HS-Ansbach" # Leave empty for GitHub Pages
 url: "https://Janine-Riemann.github.io" # Replace <your-github-username> with your GitHub username
 theme: "jekyll-theme-minimal" # Use a GitHub Pages-supported theme
 language: "en"
