@@ -15,12 +15,12 @@ social_media:
 # Navigation links
 navigation:
   - title: "Home"
-    url: "/index.html"
+    url: "{{ site.baseurl }}/index.html"
   - title: "About"
-    url: "/about.html"
+    url: "{{ site.baseurl }}/about.html"
   - title: "News"
-    url: "/news.html"
+    url: "{{ site.baseurl }}/news.html"
   - title: "Publications"
-    url: "/publications.html"
+    url: "{{ site.baseurl }}/publications.html"
   - title: "Results"
-    url: "/results.html"
+    url: "{{ site.baseurl }}/results.html"
