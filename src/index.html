@@ -3,46 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SciNeW - News & Insights</title>
+    <title>SciNeW - Wissenschaftliche Neuigkeiten</title>
     <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <!-- Hero Section -->
+    <header class="hero">
         <div class="container">
-            <h1>SciNeW</h1>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Über SciNeW</a></li>
-                    <li><a href="news.html">Neuigkeiten</a></li>
-                    <li><a href="publications.html">Publikationen</a></li>
-                    <li><a href="results.html">Ergebnisse</a></li>
-                </ul>
-                <button class="menu-toggle">☰</button>
-            </nav>
+            <h1>Willkommen bei SciNeW</h1>
+            <p>Erhalten Sie die neuesten wissenschaftlichen Neuigkeiten und spannende Einblicke in aktuelle Forschungsprojekte.</p>
+            <a href="#features" class="cta-button">Mehr erfahren</a>
         </div>
     </header>
+
+    <!-- Features Section -->
     <main>
-        <section class="news-section">
+        <section id="features" class="features">
             <div class="container">
-                <h2>Aktuelle Nachrichten</h2>
-                <article>
-                    <h3>Neueste Umfrageergebnisse</h3>
-                    <p>Hier werden zeitnah die Ergebnisse der Umfrage veröffentlicht.</p>
-                </article>
-                <article>
-                    <h3>Einblicke in die Forschung</h3>
-                    <p>Erfahren Sie mehr über die neuesten Erkenntnisse aus unserem Projekt.</p>
-                </article>
+                <h2>Unsere Highlights</h2>
+                <div class="feature-grid">
+                    <article>
+                        <h3>Neueste Umfrageergebnisse</h3>
+                        <p>Hier werden zeitnah die Ergebnisse der Umfrage veröffentlicht.</p>
+                    </article>
+                    <article>
+                        <h3>Einblicke in die Forschung</h3>
+                        <p>Erfahren Sie mehr über die neuesten Erkenntnisse aus unserem Projekt.</p>
+                    </article>
+                    <article>
+                        <h3>Publikationen</h3>
+                        <p>Lesen Sie unsere neuesten wissenschaftlichen Veröffentlichungen und Berichte.</p>
+                    </article>
+                </div>
             </div>
         </section>
     </main>
-    <footer>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <p>&copy; 2025 SciNeW Projekt. Alle Rechte vorbehalten.</p>
+            <p>Folgen Sie uns auf <a href="#">Twitter</a>, <a href="#">LinkedIn</a> oder <a href="#">Facebook</a>.</p>
         </div>
     </footer>
-    <script src="js/scripts.js"></script>
 </body>
 </html>
