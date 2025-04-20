@@ -1,16 +1,14 @@
 // This file contains JavaScript code for interactive features and functionality on the SciNeW website.
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Example: Smooth scrolling for internal links
-    const internalLinks = document.querySelectorAll('a[href^="#"]');
-    internalLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
         });
-    });
+    }
+});
 
     // Example: Toggle mobile navigation menu
     const menuToggle = document.querySelector('.menu-toggle');
