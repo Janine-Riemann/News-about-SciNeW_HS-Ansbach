@@ -18,26 +18,50 @@ header h1, footer p {
     margin: 0;
 }
 
-nav {
-    background-color: #e3f2fd; /* Helles Blau als Sekundärfarbe */
-    padding: 1rem 0;
+/* Navigation */
+.navbar {
+    background-color: #4caf50; /* Helles Grün als Akzentfarbe */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-nav .container {
+.navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
 }
 
-nav a {
-    color: #4caf50;
-    text-decoration: none;
+.navbar .logo {
+    font-size: 1.5rem;
     font-weight: bold;
-    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
 }
 
-nav a:hover {
-    color: #388e3c; /* Dunkleres Grün für Hover */
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #e3f2fd; /* Helles Blau als Hover-Farbe */
 }
 
 .container {
