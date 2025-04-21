@@ -8,10 +8,10 @@ body {
 }
 
 header, footer {
-    background-color: #004d40;
+    background-color: #4caf50; /* Helles Grün als Akzentfarbe */
     color: white;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
 }
 
 header h1, footer p {
@@ -19,6 +19,70 @@ header h1, footer p {
 }
 
 nav {
-    background-color: #f4f4f4;
+    background-color: #e3f2fd; /* Helles Blau als Sekundärfarbe */
     padding: 1rem 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 1rem;
+}
+
+nav a:hover {
+    color: #388e3c; /* Dunkleres Grün für Hover */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    color: #4caf50;
+    margin-bottom: 1rem;
+}
+
+.features, .about, .insights, .contact {
+    padding: 2rem 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+article {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+    color: #388e3c;
+    margin-top: 0;
+}
+
+.contact p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #80cbc4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
