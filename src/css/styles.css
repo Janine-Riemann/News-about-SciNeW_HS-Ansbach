@@ -2,19 +2,47 @@
 :root {
     --primary-color: #004d7a;
     --secondary-color: #80cbc4;
-    --background-color: #f4f4f4;
+    --background-color: #f9f9f9;
     --text-color: #333;
     --button-color: #00796b;
     --button-hover-color: #005f56;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 /* Hero Section */
@@ -32,7 +60,6 @@ body {
 
 .hero p {
     font-size: 1.25rem;
-    margin-bottom: 2rem;
 }
 
 .cta-button {
@@ -51,13 +78,9 @@ body {
 
 /* Features Section */
 .features {
-    padding: 3rem 1rem;
     text-align: center;
-}
-
-.features h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    padding: 3rem 1rem;
+    background: white;
 }
 
 .feature-grid {
@@ -67,15 +90,10 @@ body {
 }
 
 .feature-grid article {
-    background: white;
+    background: var(--secondary-color);
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.feature-grid h3 {
-    color: var(--primary-color);
-    margin-top: 0;
 }
 
 /* Footer */
@@ -84,13 +102,5 @@ body {
     color: white;
     text-align: center;
     padding: 1rem 0;
-}
-
-.footer a {
-    color: var(--secondary-color);
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+    margin-top: 2rem;
 }
