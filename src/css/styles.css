@@ -23,11 +23,10 @@ header .container {
 
 /* Logo responsive */
 header .logo {
-    max-width: 500px;
+    max-width: 1500px;
     width: 100%;
     height: auto;
-    margin-bottom: 1rem;
-    display: block;
+    margin-bottom: 0rem;
 }
 
 @media (max-width: 900px) {
