@@ -55,7 +55,7 @@ footer {
     text-align: center;
     padding: 2rem 0;
     font-size: 1rem;
-    box-shadow: 10px 2px 4px rgba(237, 111, 78, 1);
+    box-shadow: 10px 2px 4px rgb(255, 255, 255);
 }
 
 h1 {
@@ -226,4 +226,41 @@ footer a {
 
 footer a:hover {
     color: #FFF;
+}
+
+/* Anpassung: Nur die border der drei Article-Bereiche einfärben, nicht den Hintergrund */
+.features .feature-grid article {
+    border-width: 3px;
+    border-style: solid;
+    box-shadow: none;
+    padding: 1.5em;
+    border-radius: 1em;
+    background: #121616;
+}
+.features .feature-grid article h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    padding: 0.3em 0.7em;
+    border-radius: 0.5em;
+    color: #fff;
+    display: inline-block;
+    background: none;
+}
+.features .feature-grid article:nth-child(1) {
+    border-color: #4bebb9;
+}
+.features .feature-grid article:nth-child(2) {
+    border-color: #ed6f4e;
+}
+.features .feature-grid article:nth-child(3) {
+    border-color: #8b3bea;
+}
+.features .feature-grid article:nth-child(1) h3 {
+    color: #4bebb9;
+}
+.features .feature-grid article:nth-child(2) h3 {
+    color: #ed6f4e;
+}
+.features .feature-grid article:nth-child(3) h3 {
+    color: #8b3bea;
 }
