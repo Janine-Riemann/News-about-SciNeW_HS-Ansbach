@@ -82,14 +82,13 @@ h2 {
 
 article {
     background: #121616;
-    border: 2px solid #ED6F4E;
+    border: 2px solid;
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 article h3 {
-    color: #ED6F4E;
     margin-top: 0;
 }
 
