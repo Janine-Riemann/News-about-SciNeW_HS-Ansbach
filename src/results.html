@@ -33,10 +33,88 @@
             </article>
             <!-- Weitere Ergebnisse können hier hinzugefügt werden -->
         </section>
+        <!-- Umfragebereich: Wissenschaftliches Arbeiten -->
+        <section id="umfrage-insights">
+            <h2>Studierenden-Umfrage: Erfahrungen mit wissenschaftlichem Arbeiten</h2>
+            <p>Im Sommer 2025 wurden Studierende zu ihren bisherigen Erfahrungen mit wissenschaftlichem Arbeiten befragt. Die folgende Grafik zeigt die Verteilung der Antworten auf drei zentrale Aussagen (Likert-Skala):</p>
+            <div style="max-width: 700px; margin: 2em auto; background: #181c1c; padding: 1.5em; border-radius: 1em;">
+                <canvas id="likertChart" width="650" height="350" aria-label="Likert-Diagramm" role="img"></canvas>
+            </div>
+            <ul>
+                <li><strong>Ich habe bereits viele Erfahrungen mit wissenschaftlichem Arbeiten gemacht.</strong></li>
+                <li><strong>Ich hatte bereits oft die Möglichkeit, meine Fähigkeiten im wissenschaftlichen Arbeiten auszuprobieren.</strong></li>
+                <li><strong>Meine bisherigen Erfahrungen mit wissenschaftlichen Themen sind positiv.</strong></li>
+            </ul>
+            <p>Die meisten Studierenden stimmen zu, dass sie bereits Erfahrungen gesammelt haben, aber ein Teil fühlt sich noch unsicher oder neutral. Die positiven Erfahrungen überwiegen.</p>
+        </section>
+        <!-- Ende Umfragebereich -->
     </main>
     <footer>
         <p>&copy; 2023 SciNeW Projekt. Alle Rechte vorbehalten.</p>
     </footer>
     <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    const ctx = document.getElementById('likertChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Stimme überhaupt nicht zu (1)',
+                'Stimme nicht zu (2)',
+                'Weder / noch (3)',
+                'Stimme zu (4)',
+                'Stimme voll und ganz zu (5)'
+            ],
+            datasets: [
+                {
+                    label: 'Viele Erfahrungen',
+                    data: [0.0417, 0.2778, 0.1944, 0.3750, 0.1111],
+                    backgroundColor: '#4bebb9'
+                },
+                {
+                    label: 'Fähigkeiten ausprobiert',
+                    data: [0.0417, 0.2778, 0.1944, 0.3750, 0.1111],
+                    backgroundColor: '#ed6f4e'
+                },
+                {
+                    label: 'Positive Erfahrungen',
+                    data: [0.0435, 0.2609, 0.1884, 0.3913, 0.1159],
+                    backgroundColor: '#8b3bea'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                title: {
+                    display: true,
+                    text: 'Erfahrungen mit wissenschaftlichem Arbeiten (Likert-Skala)'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + (context.parsed.y * 100).toFixed(1) + '%';
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 0.5,
+                    ticks: {
+                        callback: function(value) { return (value * 100) + '%'; }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Anteil der Antworten'
+                    }
+                }
+            }
+        }
+    });
+    </script>
 </body>
 </html>

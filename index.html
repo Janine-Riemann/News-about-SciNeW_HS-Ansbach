@@ -53,6 +53,7 @@
             </div>
         </section>
 
+
         <!-- Über Uns Section -->
         <section id="about" class="about">
             <div class="container">
@@ -76,28 +77,1442 @@
             </div>
         </section>
 
-        <!-- Kontakt Section -->
+
+        </div>
+            <section id="umfrage-insights" style="width:100%;">
+              <div class="container" style="padding:0;">
+                <h2 style="color:#fff; margin-top:2em; text-align:left;">Studierenden-Umfrage: Erfahrungen mit wissenschaftlichem Arbeiten</h2>
+                <p style="color:#fff; margin-bottom:1.5em; text-align:left;">Im Sommer 2025 wurden insgesamt 74 Studierende zu ihren bisherigen Erfahrungen mit wissenschaftlichem Arbeiten befragt. Die folgende Grafik zeigt die Verteilung der Antworten auf drei zentrale Aussagen (Likert-Skala):</p>
+                <div style="width:100%; background: #fff; padding: 2em 0; border-radius: 0; color:#000; text-align:left;">
+          <canvas id="likertChart" style="display:block; width:100%; height:320px;" aria-label="Likert-Diagramm" role="img"></canvas>
+                </div>
+                <p style="color:#fff; margin-bottom:2em; text-align:left;">Die Mehrheit der Studierenden gibt an, bereits Erfahrungen mit wissenschaftlichem Arbeiten gesammelt zu haben, während ein Teil sich noch unsicher zeigt oder neutral bleibt. Insgesamt stimmen knapp 50 % der Teilnehmenden (Antwortoptionen 4 und 5) zu, dass sie über entsprechende Erfahrungen verfügen und diese als positiv empfinden. Etwa 30 % verneinen dies, was auf Unsicherheiten oder fehlende Praxis hindeutet. Rund 19 % äußern sich neutral. Insgesamt ergibt sich damit ein ausgewogenes, tendenziell positives Stimmungsbild in Bezug auf bisherige Erfahrungen mit wissenschaftlichem Arbeiten.</p>
+              </div>
+
+
+            <!-- Zweites Diagramm: Kompetenzen im Wissenschaftsprozess -->
+            <div class="container" style="padding:0;">
+              <h2 style="color:#fff; margin-top:2em; text-align:left;">In welchen der folgenden Schritte im Wissenschaftsprozess fühlen Sie sich kompetent?</h2>
+              <p style="color:#fff; margin-bottom:1.5em; text-align:justify;">Die folgende Grafik zeigt, in welchen Schritten des wissenschaftlichen Arbeitens sich die Studierenden besonders sicher fühlen und wo noch Unsicherheiten bestehen.</p>
+              <div style="width:100%; background: #fff; padding: 2em 0; border-radius: 0; color:#000; text-align:left;">
+                <canvas id="likertChart2" style="display:block; width:100%; height: 800px;" aria-label="Likert-Diagramm Kompetenzen" role="img"></canvas>
+              </div>
+
+              <p style="color:#fff; margin-bottom:2em; text-align:justify;">
+                Etwa 13–15 % der Befragten stimmen den Aussagen nicht zu, rund 20 % bleiben unentschieden. Eine leicht erhöhte Unsicherheit zeigt sich bei komplexeren Fertigkeiten wie dem Umgang mit Forschungsmethoden, Analysemethoden oder dem Einsatz von KI im Wissenschaftsprozess, wo auch der Anteil derjenigen, die nicht zustimmen, etwas höher liegt (bis zu ca. 27 %).
+                <br><br>
+                Auffällig ist, dass besonders bei praxisnahen oder technisch anspruchsvolleren Aspekten – etwa dem Verfassen wissenschaftlicher Konzepte oder dem Umgang mit KI – die Zustimmung tendenziell geringer ausfällt, was auf möglichen Unterstützungsbedarf hinweist. Insgesamt jedoch lässt sich festhalten, dass die Studierenden sich in vielen grundlegenden Bereichen des wissenschaftlichen Arbeitens bereits recht sicher fühlen, auch wenn in spezialisierteren Feldern noch Entwicklungspotenzial besteht.
+              </p>
+              <p style="color:#fff; margin-bottom:2em; text-align:justify;">
+                Die Selbsteinschätzungen der Studierenden zeigen insgesamt ein gemischtes, aber überwiegend positives Bild in Bezug auf ihre Fähigkeiten im wissenschaftlichen Arbeiten. Bei allen abgefragten Kompetenzen gibt eine deutliche Mehrheit (zwischen ca. 42 % und 44 %) an, diesen zumindest zuzustimmen („Stimme zu“), während der Anteil derjenigen, die voll zustimmen („Stimme voll und ganz zu“), mit unter 5 % deutlich geringer ausfällt. Besonders hohe Zustimmung zeigen die Bereiche „wissenschaftlich formulieren & argumentieren“ sowie „wissenschaftliche Literatur und Quellen recherchieren“.
+                <br><br>
+                Etwa 13–15 % der Befragten stimmen den Aussagen nicht zu, rund 20 % bleiben unentschieden. Eine leicht erhöhte Unsicherheit zeigt sich bei komplexeren Fertigkeiten wie dem Umgang mit Forschungsmethoden, Analysemethoden oder dem Einsatz von KI im Wissenschaftsprozess, wo auch der Anteil derjenigen, die nicht zustimmen, etwas höher liegt (bis zu ca. 27 %).
+                <br><br>
+                Auffällig ist, dass besonders bei praxisnahen oder technisch anspruchsvolleren Aspekten – etwa dem Verfassen wissenschaftlicher Konzepte oder dem Umgang mit KI – die Zustimmung tendenziell geringer ausfällt, was auf möglichen Unterstützungsbedarf hinweist. Insgesamt jedoch lässt sich festhalten, dass die Studierenden sich in vielen grundlegenden Bereichen des wissenschaftlichen Arbeitens bereits recht sicher fühlen, auch wenn in spezialisierteren Feldern noch Entwicklungspotenzial besteht.
+              </p>
+              </script>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+            <script>
+
+            // Erstes Diagramm wie gehabt
+            const ctx = document.getElementById('likertChart').getContext('2d');
+            const likertData = [
+              {
+                label: 'Ich habe bereits viele Erfahrungen mit wissenschaftlichem Arbeiten gemacht.',
+                values: [0.041666667, 0.277777778, 0.097222222, 0.097222222, 0.375, 0.111111111]
+              },
+              {
+                label: 'Ich hatte bereits oft die Möglichkeit, meine Fähigkeiten\nim wissenschaftlichen Arbeiten auszuprobieren.',
+                values: [0.041666667, 0.277777778, 0.097222222, 0.097222222, 0.375, 0.111111111]
+              },
+              {
+                label: 'Meine bisherigen Erfahrungen mit wissenschaftlichen Themen sind positiv.',
+                values: [0.043478261, 0.260869565, 0.094202899, 0.094202899, 0.391304348, 0.115942029]
+              }
+            ];
+            const labels = likertData.map(d => d.label);
+            new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: labels,
+                datasets: [
+                  {
+                    label: 'Weder / noch (3) (links)',
+                    data: likertData.map(d => d.values[2] * -100),
+                    backgroundColor: '#3d3d3d',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Stimme nicht zu (2)',
+                    data: likertData.map(d => d.values[1] * -100),
+                    backgroundColor: '#ed6f4e',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Stimme überhaupt nicht zu (1)',
+                    data: likertData.map(d => d.values[0] * -100),
+                    backgroundColor: '#8b3bea',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Weder / noch (3) (rechts)',
+                    data: likertData.map(d => d.values[3] * 100),
+                    backgroundColor: '#3d3d3d',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Stimme zu (4)',
+                    data: likertData.map(d => d.values[4] * 100),
+                    backgroundColor: '#4bebb9',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Stimme voll und ganz zu (5)',
+                    data: likertData.map(d => d.values[5] * 100),
+                    backgroundColor: '#1b4d4d',
+                    datalabels: { display: false }
+                  }
+                ]
+              },
+              options: {
+                indexAxis: 'y',
+                plugins: {
+                  legend: {
+                    position: 'bottom',
+                    labels: {
+                      color: '#000',
+                      generateLabels: function(chart) {
+                        const all = Chart.defaults.plugins.legend.labels.generateLabels(chart);
+                        const seen = {};
+                        const custom = [];
+                        all.forEach(item => {
+                          if(item.text.startsWith('Weder / noch')) {
+                            if(!seen['weder']) {
+                              custom.push({
+                                ...item,
+                                text: 'Weder / noch (3)',
+                                fillStyle: '#3d3d3d',
+                                strokeStyle: '#3d3d3d'
+                              });
+                              seen['weder'] = true;
+                            }
+                          } else {
+                            custom.push(item);
+                          }
+                        });
+                        const order = [
+                          'Stimme überhaupt nicht zu (1)',
+                          'Stimme nicht zu (2)',
+                          'Weder / noch (3)',
+                          'Stimme zu (4)',
+                          'Stimme voll und ganz zu (5)'
+                        ];
+                        custom.sort((a, b) => order.indexOf(a.text) - order.indexOf(b.text));
+                        return custom;
+                      }
+                    }
+                  },
+                  title: {
+                    display: true,
+                    text: 'Wie erfahren sind Sie im wissenschaftlichen Arbeiten?',
+                    color: '#000'
+                  },
+                  datalabels: {
+                    display: false
+                  },
+                  tooltip: {
+                    enabled: true,
+                    callbacks: {
+                      label: function(context) {
+                        if(context.dataset.label.startsWith('Weder / noch')) {
+                          const left = Math.abs(likertData[context.dataIndex].values[2]*100);
+                          const right = Math.abs(likertData[context.dataIndex].values[3]*100);
+                          const sum = left + right;
+                          return 'Weder / noch (3): ' + sum.toFixed(1) + '%';
+                        }
+                        const value = Math.abs(context.raw).toFixed(1);
+                        return context.dataset.label + ': ' + value + '%';
+                      }
+                    },
+                    backgroundColor: '#fff',
+                    titleColor: '#000',
+                    bodyColor: '#000',
+                    borderColor: '#000',
+                    borderWidth: 1
+                  }
+                },
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                  x: {
+                    stacked: true,
+                    min: -100,
+                    max: 100,
+                    ticks: {
+                      color: '#000',
+                      callback: function(value) {
+                        if (value === 0) return '0%';
+                        if (value < 0) return Math.abs(value) + '%';
+                        return value + '%';
+                      }
+                    },
+                    title: {
+                      display: true,
+                      text: 'Anteil der Antworten',
+                      color: '#000'
+                    },
+                    grid: { color: 'rgba(0,0,0,0.07)' }
+                  },
+                  y: {
+                    stacked: true,
+                    ticks: {
+                      color: '#000', // explizit schwarz
+                      font: { color: '#000' }, // fallback für ältere Chart.js-Versionen
+                      callback: function(value) {
+                        // Automatischer Zeilenumbruch für lange Labels
+                        const label = this.getLabelForValue(value);
+                        const maxLen = 40; // Zeichen pro Zeile
+                        if (label.length > maxLen) {
+                          // Trenne an Wortgrenzen
+                          const words = label.split(' ');
+                          let lines = [];
+                          let current = '';
+                          words.forEach(word => {
+                            if ((current + ' ' + word).trim().length > maxLen) {
+                              lines.push(current.trim());
+                              current = word;
+                            } else {
+                              current += ' ' + word;
+                            }
+                          });
+                          if (current) lines.push(current.trim());
+                          return lines;
+                        }
+                        return label;
+                      }
+                    },
+                    grid: { color: 'rgba(0,0,0,0.07)' },
+                    barThickness: 18
+                  }
+                },
+                hover: {
+                  mode: 'nearest',
+                  intersect: true
+                }
+              },
+              plugins: [ChartDataLabels]
+            });
+            </script>
+            <script>
+            // Zweites Diagramm: Kompetenzen im Wissenschaftsprozess
+            const ctx2 = document.getElementById('likertChart2').getContext('2d');
+            const likertData2 = [
+              { label: '... eine wissenschaftliche Fragestellung bzw. ein Thema entwickeln.', values: [0.2, 0.133333333, 0.2, 0.422222222, 0.044444444] },
+              { label: '... wissenschaftliche Literatur und Quellen recherchieren.', values: [0.2, 0.133333333, 0.2, 0.422222222, 0.044444444] },
+              { label: '... mit wissenschaftlichen Quellen (z.B. Literatur Review,\nempirischen Fachbeiträgen) umgehen (z.B. lesen, verstehen).', values: [0.204545455, 0.136363636, 0.181818182, 0.431818182, 0.045454545] },
+              { label: '... wissenschaftlich formulieren & argumentieren.', values: [0.209302326, 0.139534884, 0.162790698, 0.441860465, 0.046511628] },
+              { label: '... wissenschaftlich schreiben (z.B. zitieren & Plagiate vermeiden).', values: [0.2, 0.133333333, 0.2, 0.422222222, 0.044444444] },
+              { label: '... Forschungsmethoden anwenden (z.B. Forschungsdesigns entwickeln, Erhebungsmethoden einsetzen).', values: [0.266666667, 0.133333333, 0.2, 0.4, 0] },
+              { label: '... Analysemethoden anwenden (z.B. Daten analysieren & interpretieren).', values: [0.25, 0.15625, 0.1875, 0.40625, 0] },
+              { label: '... wissenschaftlich präsentieren (z.B. wissenschaftliche Vorträge halten).', values: [0.25, 0.15625, 0.1875, 0.40625, 0] },
+              { label: '... mit Künstlicher Intelligenz im Wissenschaftsprozess umgehen.', values: [0.266666667, 0.133333333, 0.2, 0.4, 0] },
+              { label: '... ein wissenschaftliches Konzept (z.B. Exposé) verfassen.', values: [0.242424242, 0.151515152, 0.212121212, 0.393939394, 0] }
+            ];
+            const labels2 = likertData2.map(d => d.label);
+            new Chart(ctx2, {
+              type: 'bar',
+              data: {
+                labels: labels2,
+                datasets: [
+                  {
+                    label: 'Weder / noch (3) (links)',
+                    data: likertData2.map(d => d.values[2] * -100),
+                    backgroundColor: '#3d3d3d',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Stimme nicht zu (2)',
+                    data: likertData2.map(d => d.values[1] * -100),
+                    backgroundColor: '#ed6f4e',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Stimme überhaupt nicht zu (1)',
+                    data: likertData2.map(d => d.values[0] * -100),
+                    backgroundColor: '#8b3bea',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Weder / noch (3) (rechts)',
+                    data: likertData2.map(d => d.values[2] * 100),
+                    backgroundColor: '#3d3d3d',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Stimme zu (4)',
+                    data: likertData2.map(d => d.values[3] * 100),
+                    backgroundColor: '#4bebb9',
+                    datalabels: { display: false }
+                  },
+                  {
+                    label: 'Stimme voll und ganz zu (5)',
+                    data: likertData2.map(d => d.values[4] * 100),
+                    backgroundColor: '#1b4d4d',
+                    datalabels: { display: false }
+                  }
+                ]
+              },
+              options: {
+                indexAxis: 'y',
+                plugins: {
+                  legend: {
+                    position: 'bottom',
+                    labels: {
+                      color: '#000',
+                      generateLabels: function(chart) {
+                        const all = Chart.defaults.plugins.legend.labels.generateLabels(chart);
+                        const seen = {};
+                        const custom = [];
+                        all.forEach(item => {
+                          if(item.text.startsWith('Weder / noch')) {
+                            if(!seen['weder']) {
+                              custom.push({
+                                ...item,
+                                text: 'Weder / noch (3)',
+                                fillStyle: '#3d3d3d',
+                                strokeStyle: '#3d3d3d'
+                              });
+                              seen['weder'] = true;
+                            }
+                          } else {
+                            custom.push(item);
+                          }
+                        });
+                        const order = [
+                          'Stimme überhaupt nicht zu (1)',
+                          'Stimme nicht zu (2)',
+                          'Weder / noch (3)',
+                          'Stimme zu (4)',
+                          'Stimme voll und ganz zu (5)'
+                        ];
+                        custom.sort((a, b) => order.indexOf(a.text) - order.indexOf(b.text));
+                        return custom;
+                      }
+                    }
+                  },
+                  title: {
+                    display: true,
+                    text: 'Kompetenz-Empfinden in Schritten des Wissenschaftsprozesses',
+                    color: '#000'
+                  },
+                  datalabels: {
+                    display: false
+                  },
+                  tooltip: {
+                    enabled: true,
+                    callbacks: {
+                      label: function(context) {
+                        if(context.dataset.label.startsWith('Weder / noch')) {
+                          const value = Math.abs(likertData2[context.dataIndex].values[2]*100);
+                          return 'Weder / noch (3): ' + value.toFixed(1) + '%';
+                        }
+                        const value = Math.abs(context.raw).toFixed(1);
+                        return context.dataset.label + ': ' + value + '%';
+                      }
+                    },
+                    backgroundColor: '#fff',
+                    titleColor: '#000',
+                    bodyColor: '#000',
+                    borderColor: '#000',
+                    borderWidth: 1
+                  }
+                },
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                  x: {
+                    stacked: true,
+                    min: -100,
+                    max: 100,
+                    ticks: {
+                      color: '#000',
+                      callback: function(value) {
+                        if (value === 0) return '0%';
+                        if (value < 0) return Math.abs(value) + '%';
+                        return value + '%';
+                      }
+                    },
+                    title: {
+                      display: true,
+                      text: 'Anteil der Antworten',
+                      color: '#000'
+                    },
+                    grid: { color: 'rgba(0,0,0,0.07)' }
+                  },
+                  y: {
+                    stacked: true,
+                    ticks: {
+                      color: '#000', // explizit schwarz
+                      font: { color: '#000' }, // fallback für ältere Chart.js-Versionen
+                      callback: function(value) {
+                        // Automatischer Zeilenumbruch für lange Labels
+                        const label = this.getLabelForValue(value);
+                        const maxLen = 40; // Zeichen pro Zeile
+                        if (label.length > maxLen) {
+                          // Trenne an Wortgrenzen
+                          const words = label.split(' ');
+                          let lines = [];
+                          let current = '';
+                          words.forEach(word => {
+                            if ((current + ' ' + word).trim().length > maxLen) {
+                              lines.push(current.trim());
+                              current = word;
+                            } else {
+                              current += ' ' + word;
+                            }
+                          });
+                          if (current) lines.push(current.trim());
+                          return lines;
+                        }
+                        return label;
+                      }
+                    },
+                    grid: { color: 'rgba(0,0,0,0.07)' },
+                    barThickness: 18
+                  }
+                },
+                hover: {
+                  mode: 'nearest',
+                  intersect: true
+                }
+              },
+              plugins: [ChartDataLabels]
+            });
+            </script>
+
+        <!-- NfC/NfD/Neues Likert-Chart -->
+        <div class="container" style="padding:0;">
+          <h2 style="color:#fff; margin-top:2em; text-align:left;">Neues: Einstellungen & Offenheit für Neues</h2>
+          <p style="color:#fff; margin-bottom:1.5em; text-align:justify;">Die folgende Grafik zeigt, wie die Studierenden neue Aufgaben, Konzepte und Methoden einschätzen und wie offen sie für Neues sind.</p>
+          <div style="width:100%; background: #fff; padding: 2em 0; border-radius: 0; color:#000; text-align:left; margin-bottom:2em;">
+            <canvas id="likertChartNeues" style="display:block; width:100%; height: 550px;" aria-label="Likert-Diagramm NfC/NfD/Neues" role="img"></canvas>
+          </div>
+          <script>
+          // NfC/NfD/Neues Chart (gesplittetes 'Weder / noch (3)' wie oben)
+          const ctxNeues = document.getElementById('likertChartNeues').getContext('2d');
+          const likertDataNeues = [
+            {
+              label: 'Ich genieße es, Aufgaben zu lösen, die zum Nachdenken anregen.',
+              values: [0.075, 0.125, 0.125, 0.125, 0.5, 0.175]
+            },
+            {
+              label: 'Ich beschäftige mich gerne mit schwierigen Konzepten, auch wenn sie Zeit und Mühe kosten.',
+              values: [0.076923077, 0.128205128, 0.128205128, 0.128205128, 0.487179487, 0.179487179]
+            },
+            {
+              label: 'Ich wünsche mir im Studium mehr Zeit, um Inhalte in Ruhe zu durchdenken.',
+              values: [0.075, 0.125, 0.125, 0.125, 0.5, 0.175]
+            },
+            {
+              label: 'Ich fühle mich oft überfordert von der Geschwindigkeit, mit der Inhalte vermittelt werden.',
+              values: [0.075, 0.125, 0.125, 0.125, 0.5, 0.175]
+            },
+            {
+              label: 'Ich bin offen für neue Methoden und Ansätze, auch wenn sie anfangs ungewohnt sind.',
+              values: [0.076923077, 0.128205128, 0.102564103, 0.102564103, 0.512820513, 0.179487179]
+            },
+            {
+              label: 'Ich suche aktiv nach Gelegenheiten, mein Wissen zu erweitern.',
+              values: [0.076923077, 0.128205128, 0.128205128, 0.128205128, 0.487179487, 0.179487179]
+            },
+            {
+              label: 'Ich habe diesen Fragebogen aufmerksam gelesen.',
+              values: [0.075, 0.125, 0.125, 0.125, 0.5, 0.175]
+            }
+          ];
+          const labelsNeues = likertDataNeues.map(d => d.label);
+          new Chart(ctxNeues, {
+            type: 'bar',
+            data: {
+              labels: labelsNeues,
+              datasets: [
+                {
+                  label: 'Weder / noch (3) (links)',
+                  data: likertDataNeues.map(d => d.values[2] * -100),
+                  backgroundColor: '#3d3d3d',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Stimme nicht zu (2)',
+                  data: likertDataNeues.map(d => d.values[1] * -100),
+                  backgroundColor: '#ed6f4e',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Stimme überhaupt nicht zu (1)',
+                  data: likertDataNeues.map(d => d.values[0] * -100),
+                  backgroundColor: '#8b3bea',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Weder / noch (3) (rechts)',
+                  data: likertDataNeues.map(d => d.values[3] * 100),
+                  backgroundColor: '#3d3d3d',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Stimme zu (4)',
+                  data: likertDataNeues.map(d => d.values[4] * 100),
+                  backgroundColor: '#4bebb9',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Stimme voll und ganz zu (5)',
+                  data: likertDataNeues.map(d => d.values[5] * 100),
+                  backgroundColor: '#1b4d4d',
+                  datalabels: { display: false }
+                }
+              ]
+            },
+            options: {
+              indexAxis: 'y',
+              plugins: {
+                legend: {
+                  position: 'bottom',
+                  labels: {
+                    color: '#000',
+                    generateLabels: function(chart) {
+                      const all = Chart.defaults.plugins.legend.labels.generateLabels(chart);
+                      const seen = {};
+                      const custom = [];
+                      all.forEach(item => {
+                        if(item.text.startsWith('Weder / noch')) {
+                          if(!seen['weder']) {
+                            custom.push({
+                              ...item,
+                              text: 'Weder / noch (3)',
+                              fillStyle: '#3d3d3d',
+                              strokeStyle: '#3d3d3d'
+                            });
+                            seen['weder'] = true;
+                          }
+                        } else {
+                          custom.push(item);
+                        }
+                      });
+                      const order = [
+                        'Stimme überhaupt nicht zu (1)',
+                        'Stimme nicht zu (2)',
+                        'Weder / noch (3)',
+                        'Stimme zu (4)',
+                        'Stimme voll und ganz zu (5)'
+                      ];
+                      custom.sort((a, b) => order.indexOf(a.text) - order.indexOf(b.text));
+                      return custom;
+                    }
+                  }
+                },
+                title: {
+                  display: true,
+                  text: 'Einstellungen & Offenheit für Neues',
+                  color: '#000'
+                },
+                datalabels: {
+                  display: false
+                },
+                tooltip: {
+                  enabled: true,
+                  callbacks: {
+                    label: function(context) {
+                      if(context.dataset.label.startsWith('Weder / noch')) {
+                        const left = Math.abs(likertDataNeues[context.dataIndex].values[2]*100);
+                        const right = Math.abs(likertDataNeues[context.dataIndex].values[3]*100);
+                        const sum = left + right;
+                        return 'Weder / noch (3): ' + sum.toFixed(1) + '%';
+                      }
+                      const value = Math.abs(context.raw).toFixed(1);
+                      return context.dataset.label + ': ' + value + '%';
+                    }
+                  },
+                  backgroundColor: '#fff',
+                  titleColor: '#000',
+                  bodyColor: '#000',
+                  borderColor: '#000',
+                  borderWidth: 1
+                }
+              },
+              responsive: true,
+              maintainAspectRatio: true,
+              scales: {
+                x: {
+                  stacked: true,
+                  min: -100,
+                  max: 100,
+                  ticks: {
+                    color: '#000',
+                    callback: function(value) {
+                      if (value === 0) return '0%';
+                      if (value < 0) return Math.abs(value) + '%';
+                      return value + '%';
+                    }
+                  },
+                  title: {
+                    display: true,
+                    text: 'Anteil der Antworten',
+                    color: '#000'
+                  },
+                  grid: { color: 'rgba(0,0,0,0.07)' }
+                },
+                y: {
+                  stacked: true,
+                  ticks: {
+                    color: '#000',
+                    font: { color: '#000' },
+                    callback: function(value) {
+                      const label = this.getLabelForValue(value);
+                      const maxLen = 40;
+                      if (label.length > maxLen) {
+                        const words = label.split(' ');
+                        let lines = [];
+                        let current = '';
+                        words.forEach(word => {
+                          if ((current + ' ' + word).trim().length > maxLen) {
+                            lines.push(current.trim());
+                            current = word;
+                          } else {
+                            current += ' ' + word;
+                          }
+                        });
+                        if (current) lines.push(current.trim());
+                        return lines;
+                      }
+                      return label;
+                    }
+                  },
+                  grid: { color: 'rgba(0,0,0,0.07)' },
+                  barThickness: 18
+                }
+              },
+              hover: {
+                mode: 'nearest',
+                intersect: true
+              }
+            },
+            plugins: [ChartDataLabels]
+          });
+          </script>
+          <p style="color:#fff; margin-bottom:2em; text-align:justify;">
+            Die Ergebnisse zeigen, dass die Studierenden insgesamt eine hohe Offenheit für neue Aufgaben, Konzepte und Methoden mitbringen. Besonders auffällig ist die starke Zustimmung zu Aussagen, die das aktive Nachdenken und das eigenständige Erarbeiten von Wissen betreffen. Gleichzeitig wünschen sich viele mehr Zeit, um Inhalte in Ruhe zu durchdenken, und empfinden die Geschwindigkeit der Wissensvermittlung teilweise als herausfordernd. Die Bereitschaft, neue Methoden und Ansätze auszuprobieren, ist ebenfalls ausgeprägt. Insgesamt lässt sich festhalten, dass die Studierenden neugierig und lernbereit sind, aber auch Wert auf ein angemessenes Lerntempo legen.
+          </p>
         <section id="contact" class="contact">
-            <div class="container">
+        <!-- Einstellung/Relevanz Likert-Chart -->
+        <div class="container" style="padding:0;">
+          <h2 style="color:#fff; margin-top:2em; text-align:left;">Einstellung & Relevanz: Wissenschaftliches Arbeiten</h2>
+          <p style="color:#fff; margin-bottom:1.5em; text-align:justify;">Die folgende Grafik zeigt, wie die Studierenden das Fach wissenschaftliches Arbeiten und dessen Relevanz für Studium und Beruf einschätzen.</p>
+          <div style="width:100%; background: #fff; padding: 2em 0; border-radius: 0; color:#000; text-align:left; margin-bottom:2em;">
+            <canvas id="likertChartRelevanz" style="display:block; width:100%; height: 550px;" aria-label="Likert-Diagramm Einstellung/Relevanz" role="img"></canvas>
+          </div>
+          <p style="color:#fff; margin-bottom:2em; text-align:justify;">
+            Die Ergebnisse zeigen eine insgesamt verhalten positive Einstellung gegenüber dem Fach "Wissenschaftliches Arbeiten". Die Mehrheit der Befragten positioniert sich in der Mitte der Skala ("weder/noch"), was auf eine gewisse Unsicherheit oder Neutralität hindeuten könnte. Dennoch stimmen über 35 % der Teilnehmenden den positiven Aussagen zu (Stufe 4 und 5), insbesondere in Bezug auf den Nutzen für das Studium und den späteren Beruf. Der Anteil an Personen, die das Fach als "unnötige Belastung" empfinden, ist vergleichsweise gering. Dies deutet darauf hin, dass wissenschaftliches Arbeiten überwiegend als sinnvoll und relevant wahrgenommen wird, auch wenn eine stärkere Begeisterung oder Überzeugung noch ausbaufähig erscheint.
+          </p>
+          <script>
+          // Einstellung/Relevanz Chart
+          const ctxRel = document.getElementById('likertChartRelevanz').getContext('2d');
+          const likertDataRel = [
+            {
+              label: 'Ich finde das Fach wissenschaftliches Arbeiten interessant.',
+              values: [0.175, 0.2, 0.275/2, 0.275/2, 0.225, 0.125]
+            },
+            {
+              label: 'Ich sehe wissenschaftliches Arbeiten als unnötige Belastung.',
+              values: [0.153846154, 0.205128205, 0.282051282/2, 0.282051282/2, 0.230769231, 0.128205128]
+            },
+            {
+              label: 'Eine fundiert wissenschaftliche Arbeitsweise bereitet mir Freude.',
+              values: [0.175, 0.2, 0.275/2, 0.275/2, 0.225, 0.125]
+            },
+            {
+              label: 'Das Erlernen wissenschaftlichen Arbeitens ist für mein Studium nützlich.',
+              values: [0.179487179, 0.179487179, 0.282051282/2, 0.282051282/2, 0.230769231, 0.128205128]
+            },
+            {
+              label: 'Die Inhalte aus dem Fach wissenschaftliches Arbeiten helfen mir, wissenschaftliche Fragestellungen besser zu verstehen.',
+              values: [0.162162162, 0.216216216, 0.243243243/2, 0.243243243/2, 0.243243243, 0.135135135]
+            },
+            {
+              label: 'Ich werde die im Fach wissenschaftliches Arbeiten erworbenen Fähigkeiten in meinem späteren Beruf anwenden können.',
+              values: [0.166666667, 0.222222222, 0.25/2, 0.25/2, 0.25, 0.111111111]
+            }
+          ];
+          const labelsRel = likertDataRel.map(d => d.label);
+          new Chart(ctxRel, {
+            type: 'bar',
+            data: {
+              labels: labelsRel,
+              datasets: [
+                {
+                  label: 'Weder / noch (3) (links)',
+                  data: likertDataRel.map(d => d.values[2] * -100),
+                  backgroundColor: '#3d3d3d',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Stimme nicht zu (2)',
+                  data: likertDataRel.map(d => d.values[1] * -100),
+                  backgroundColor: '#ed6f4e',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Stimme überhaupt nicht zu (1)',
+                  data: likertDataRel.map(d => d.values[0] * -100),
+                  backgroundColor: '#8b3bea',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Weder / noch (3) (rechts)',
+                  data: likertDataRel.map(d => d.values[3] * 100),
+                  backgroundColor: '#3d3d3d',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Stimme zu (4)',
+                  data: likertDataRel.map(d => d.values[4] * 100),
+                  backgroundColor: '#4bebb9',
+                  datalabels: { display: false }
+                },
+                {
+                  label: 'Stimme voll und ganz zu (5)',
+                  data: likertDataRel.map(d => d.values[5] * 100),
+                  backgroundColor: '#1b4d4d',
+                  datalabels: { display: false }
+                }
+              ]
+            },
+            options: {
+              indexAxis: 'y',
+              plugins: {
+                legend: {
+                  position: 'bottom',
+                  labels: {
+                    color: '#000',
+                    generateLabels: function(chart) {
+                      const all = Chart.defaults.plugins.legend.labels.generateLabels(chart);
+                      const seen = {};
+                      const custom = [];
+                      all.forEach(item => {
+                        if(item.text.startsWith('Weder / noch')) {
+                          if(!seen['weder']) {
+                            custom.push({
+                              ...item,
+                              text: 'Weder / noch (3)',
+                              fillStyle: '#3d3d3d',
+                              strokeStyle: '#3d3d3d'
+                            });
+                            seen['weder'] = true;
+                          }
+                        } else {
+                          custom.push(item);
+                        }
+                      });
+                      const order = [
+                        'Stimme überhaupt nicht zu (1)',
+                        'Stimme nicht zu (2)',
+                        'Weder / noch (3)',
+                        'Stimme zu (4)',
+                        'Stimme voll und ganz zu (5)'
+                      ];
+                      custom.sort((a, b) => order.indexOf(a.text) - order.indexOf(b.text));
+                      return custom;
+                    }
+                  }
+                },
+                title: {
+                  display: true,
+                  text: 'Einstellung & Relevanz: Wissenschaftliches Arbeiten',
+                  color: '#000'
+                },
+                datalabels: {
+                  display: false
+                },
+                tooltip: {
+                  enabled: true,
+                  callbacks: {
+                    label: function(context) {
+                      if(context.dataset.label.startsWith('Weder / noch')) {
+                        const left = Math.abs(likertDataRel[context.dataIndex].values[2]*100);
+                        const right = Math.abs(likertDataRel[context.dataIndex].values[3]*100);
+                        const sum = left + right;
+                        return 'Weder / noch (3): ' + sum.toFixed(1) + '%';
+                      }
+                      const value = Math.abs(context.raw).toFixed(1);
+                      return context.dataset.label + ': ' + value + '%';
+                    }
+                  },
+                  backgroundColor: '#fff',
+                  titleColor: '#000',
+                  bodyColor: '#000',
+                  borderColor: '#000',
+                  borderWidth: 1
+                }
+              },
+              responsive: true,
+              maintainAspectRatio: true,
+              scales: {
+                x: {
+                  stacked: true,
+                  min: -100,
+                  max: 100,
+                  ticks: {
+                    color: '#000',
+                    callback: function(value) {
+                      if (value === 0) return '0%';
+                      if (value < 0) return Math.abs(value) + '%';
+                      return value + '%';
+                    }
+                  },
+                  title: {
+                    display: true,
+                    text: 'Anteil der Antworten',
+                    color: '#000'
+                  },
+                  grid: { color: 'rgba(0,0,0,0.07)' }
+                },
+                y: {
+                  stacked: true,
+                  ticks: {
+                    color: '#000',
+                    font: { color: '#000' },
+                    callback: function(value) {
+                      const label = this.getLabelForValue(value);
+                      const maxLen = 40;
+                      if (label.length > maxLen) {
+                        const words = label.split(' ');
+                        let lines = [];
+                        let current = '';
+                        words.forEach(word => {
+                          if ((current + ' ' + word).trim().length > maxLen) {
+                            lines.push(current.trim());
+                            current = word;
+                          } else {
+                            current += ' ' + word;
+                          }
+                        });
+                        if (current) lines.push(current.trim());
+                        return lines;
+                      }
+                      return label;
+                    }
+                  },
+                  grid: { color: 'rgba(0,0,0,0.07)' },
+                  barThickness: 18
+                }
+              },
+              hover: {
+                mode: 'nearest',
+                intersect: true
+              }
+            },
+            plugins: [ChartDataLabels]
+          });
+          </script>
+        </div>
+        <!-- Motivation Likert-Chart -->
+        <h2 style="color:#fff; margin-top:2em;">Motivation: Wissenschaftliches Arbeiten</h2>
+        <p style="color:#fff; margin-bottom:1.5em; text-align:justify;">Die folgende Grafik zeigt, aus welchen Gründen sich Studierende mit wissenschaftlichem Arbeiten beschäftigen und wie sie ihre Motivation einschätzen.</p>
+        <div style="width:100%; background: #fff; padding: 2em 0; border-radius: 0; color:#000; margin-bottom:2em;">
+          <canvas id="likertChartMotivation" style="display:block; width:100%; height:320px;" aria-label="Likert-Diagramm Motivation" role="img"></canvas>
+        </div>
+        <p style="color:#fff; margin-bottom:2em; text-align:justify;">
+          Die Ergebnisse zeigen, dass die Motivation der Studierenden für wissenschaftliches Arbeiten überwiegend extrinsisch geprägt ist. Die meisten beschäftigen sich mit dem Thema, weil es Teil des Studiums ist oder sie einen guten Abschluss erreichen möchten. Nur eine Minderheit gibt an, wissenschaftliches Arbeiten aus persönlichem Interesse spannend zu finden. Die Zustimmung zu intrinsischer Motivation ist deutlich geringer als zu den anderen Gründen.
+        </p>
+        <h2 style="color:#fff; margin-top:2em;">Selbstwirksamkeit, Kontrollüberzeugungen & Bedenken</h2>
+        <p style="color:#fff; margin-bottom:1.5em; text-align:justify;">Die folgende Grafik zeigt, wie die Studierenden ihre Selbstwirksamkeit, Kontrollüberzeugungen und Bedenken im wissenschaftlichen Arbeiten einschätzen.</p>
+        <div style="width:100%; background: #fff; padding: 2em 0; border-radius: 0; color:#000; margin-bottom:2em;">
+          <canvas id="likertChartLoc" style="display:block; width:100%; height:550px;" aria-label="Likert-Diagramm Selbstwirksamkeit/LoC/Bedenken" role="img"></canvas>
+        </div>
+        <p style="color:#fff; margin-bottom:2em; text-align:justify;">Die Ergebnisse zeigen, dass die Mehrheit der Studierenden ihre Selbstwirksamkeit im wissenschaftlichen Arbeiten als hoch einschätzt. Gleichzeitig bestehen bei einigen Teilnehmenden Bedenken und Unsicherheiten, insbesondere in Bezug auf die Anforderungen und mögliche Fehlerquellen wie Plagiate. Die Kontrollüberzeugungen variieren: Während viele Studierende ihren Erfolg als Ergebnis eigener Bemühungen sehen, spielt auch die Qualität der Lehre und das Glück eine gewisse Rolle. Insgesamt überwiegt jedoch das Vertrauen in die eigenen Fähigkeiten.</p>
+
+        <!-- Wordclouds: Wissenschaftliches Arbeiten & Themen -->
+        <div class="container" style="padding:0;">
+          <h2 style="color:#fff; margin-top:2em; text-align:left;">Wenn ich an wissenschaftliches Arbeiten denke, fallen mir diese Worte spontan ein:</h2>
+          <div style="width:100%; background: #fff; padding: 2em 0; border-radius: 0; color:#000; text-align:center; margin-bottom:2em;">
+            <img src="src/images/wordcloud_wissenschaftliches_arbeiten.png" alt="Wortwolke: Assoziationen zu wissenschaftlichem Arbeiten" style="max-width:100%; height:auto; display:inline-block;" />
+          </div>
+        </div>
+        <div class="container" style="padding:0;">
+          <h2 style="color:#fff; margin-top:2em; text-align:left;">Diese Themen fallen mir spontan ein, wenn ich an wissenschaftliches Arbeiten denke...</h2>
+          <div style="width:100%; background: #fff; padding: 2em 0; border-radius: 0; color:#000; text-align:center; margin-bottom:2em;">
+            <img src="src/images/wordcloud_themen_wissenschaftliches_arbeiten.png" alt="Wortwolke: Assoziierte Themen zum wissenschaftlichen Arbeiten" style="max-width:100%; height:auto; display:inline-block;" />
+          </div>
+        </div>
+        <!-- Forschungsansatz Kreisdiagramme -->
+<section id="forschungsansatz-charts" class="forschungsansatz-charts">
+  <h2 style="color:#fff; margin-top:2em; text-align:left;">Quiz: Forschungsansätze & Methodenwissen</h2>
+  <div style="width:100%; background: #fff; padding: 3em 0;">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; gap: 2em; justify-content: center;">
+        <!-- Chart 1 -->
+        <div style="width: 260px; text-align: center;">
+          <h3 style="font-size:1em; margin-bottom:1em; color:#1b4d4d;">UV/AV: „Hunde sind weniger intelligent als Katzen“</h3>
+          <canvas id="pieChart1" width="220" height="220" aria-label="Kreisdiagramm 1" role="img"></canvas>
+        </div>
+        <!-- Chart 2 -->
+        <div style="width: 260px; text-align: center;">
+          <h3 style="font-size:1em; margin-bottom:1em; color:#1b4d4d;">Ampeln & Verkehrsunfälle</h3>
+          <canvas id="pieChart2" width="220" height="220" aria-label="Kreisdiagramm 2" role="img"></canvas>
+        </div>
+        <!-- Chart 3 -->
+        <div style="width: 260px; text-align: center;">
+          <h3 style="font-size:1em; margin-bottom:1em; color:#1b4d4d;">Motivation UI-Interaktion</h3>
+          <canvas id="pieChart3" width="220" height="220" aria-label="Kreisdiagramm 3" role="img"></canvas>
+        </div>
+        <!-- Chart 4 -->
+        <div style="width: 260px; text-align: center;">
+          <h3 style="font-size:1em; margin-bottom:1em; color:#1b4d4d;">Datenanalyseverfahren NICHT</h3>
+          <canvas id="pieChart4" width="220" height="220" aria-label="Kreisdiagramm 4" role="img"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="color:#fff; margin-bottom:2em; text-align:justify;">Zusammenfassung: Die Ergebnisse zeigen, dass die Mehrheit der Studierenden die Quizfragen zu Forschungsansätzen und Methodenwissen korrekt beantwortet hat. Besonders bei der Frage zu UV/AV und Motivation für UI-Interaktion lag die Quote richtiger Antworten bei über 65 %. Bei der Frage zu Datenanalyseverfahren war die Fehlerquote am höchsten. Insgesamt zeigt sich ein solides Methodenverständnis, aber auch Potenzial für weitere Vertiefung.</p>
+
+  <!-- Deskriptive Statistiken Tabelle -->
+  <div class="container" style="margin-bottom:3em;">
+    <h2 style="color:#fff; margin-top:2em; text-align:left;">Deskriptive Statistiken</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; background:#fff; color:#000; margin-top:1em;">
+        <thead>
+          <tr style="background:#1b4d4d; color:#fff;">
+            <th style="padding:0.5em;">Studiengang</th>
+            <th>Anzahl</th>
+            <th>Abschluss</th>
+            <th>Anzahl</th>
+            <th>Geschlecht</th>
+            <th>Anzahl</th>
+            <th>Code</th>
+            <th>Anzahl</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Andere</td><td>1</td><td>Abschluss</td><td>1</td><td>Geschlecht</td><td>1</td><td>6</td><td>1</td></tr>
+          <tr><td>Digitale Medien</td><td>1</td><td>Anderes</td><td>1</td><td>keine Angaben</td><td>2</td><td>18</td><td>3</td></tr>
+          <tr><td>Angewandte Wirtschafts- & Medienpsychologie - AWM</td><td>16</td><td>Bachelor</td><td>28</td><td>männlich</td><td>10</td><td>19</td><td>2</td></tr>
+          <tr><td>Betriebswirtschaftslehre</td><td>2</td><td>Master</td><td>11</td><td>weiblich</td><td>28</td><td>20</td><td>3</td></tr>
+          <tr><td>Betriebswirtschaftslehre - BW</td><td>6</td><td>Gesamtergebnis</td><td>41</td><td></td><td>4</td><td>21</td><td>7</td></tr>
+          <tr><td>Digitales Marketing - DIM</td><td>1</td><td></td><td>7</td><td></td><td>1</td><td>22</td><td>4</td></tr>
+          <tr><td>Medienwirkung & Medienpsychologie - MUM</td><td>8</td><td></td><td>8</td><td></td><td>1</td><td>23</td><td>4</td></tr>
+          <tr><td>Multimedia und Kommunikation - MUK</td><td>2</td><td></td><td>Gesamtergebnis</td><td></td><td>40</td><td>24</td><td>7</td></tr>
+          <tr><td>Studiengang</td><td>1</td><td></td><td></td><td></td><td></td><td>25</td><td>3</td></tr>
+          <tr><td>Studiengang: Andere</td><td>1</td><td></td><td></td><td></td><td></td><td>26</td><td>2</td></tr>
+          <tr><td>Visualisierung und Interaktion in Digitalen Medien -VIS</td><td>4</td><td></td><td></td><td></td><td></td><td>27</td><td>1</td></tr>
+          <tr><td>(Leer)</td><td></td><td></td><td></td><td></td><td></td><td>28</td><td>1</td></tr>
+          <tr><td>Gesamtergebnis</td><td>41</td><td></td><td></td><td></td><td></td><td>29</td><td>1</td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>31</td><td>1</td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Gesamtergebnis</td><td>40</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+        // Daten für die Pie Charts
+        const pieData = [
+          { labels: ['richtig', 'FALSCH'], data: [21, 11] },
+          { labels: ['richtig', 'FALSCH'], data: [19, 11] },
+          { labels: ['richtig', 'FALSCH'], data: [19, 9] },
+          { labels: ['richtig', 'FALSCH'], data: [13, 15] }
+        ];
+        const pieColors = [
+          ['#4bebb9', '#ed6f4e'],
+          ['#4bebb9', '#ed6f4e'],
+          ['#4bebb9', '#ed6f4e'],
+          ['#4bebb9', '#ed6f4e']
+        ];
+        for(let i=1; i<=4; i++) {
+          new Chart(document.getElementById('pieChart'+i).getContext('2d'), {
+            type: 'pie',
+            data: {
+              labels: pieData[i-1].labels,
+              datasets: [{
+                data: pieData[i-1].data,
+                backgroundColor: pieColors[i-1],
+                borderColor: '#fff',
+                borderWidth: 2
+              }]
+            },
+            options: {
+              plugins: {
+                legend: {
+                  position: 'bottom',
+                  labels: { color: '#1b4d4d', font: { size: 14 } }
+                },
+                tooltip: {
+                  callbacks: {
+                    label: function(context) {
+                      const label = context.label || '';
+                      const value = context.parsed;
+                      return label + ': ' + value;
+                    }
+                  }
+                }
+              }
+            }
+          });
+        }
+        </script>
+        <script>
+        // Motivation Chart
+        const ctxMotivation = document.getElementById('likertChartMotivation').getContext('2d');
+        const likertDataMotivation = [
+          {
+            label: 'Ich beschäftige mich mit wissenschaftlichem Arbeiten, weil ich es spannend finde.',
+            values: [0.153846154, 0.307692308, 0.282051282/2, 0.282051282/2, 0.179487179, 0.076923077]
+          },
+          {
+            label: 'Ich lerne wissenschaftliches Arbeiten, weil ich einen guten Abschluss erreichen möchte.',
+            values: [0.153846154, 0.307692308, 0.282051282/2, 0.282051282/2, 0.179487179, 0.076923077]
+          },
+          {
+            label: 'Ich beschäftige mich nur mit wissenschaftlichem Arbeiten, weil es Teil meines Studiums ist.',
+            values: [0.153846154, 0.307692308, 0.282051282/2, 0.282051282/2, 0.179487179, 0.076923077]
+          }
+        ];
+        const labelsMotivation = likertDataMotivation.map(d => d.label);
+        new Chart(ctxMotivation, {
+          type: 'bar',
+          data: {
+            labels: labelsMotivation,
+            datasets: [
+              {
+                label: 'Weder / noch (3) (links)',
+                data: likertDataMotivation.map(d => d.values[2] * -100),
+                backgroundColor: '#3d3d3d',
+                datalabels: { display: false }
+              },
+              {
+                label: 'Stimme nicht zu (2)',
+                data: likertDataMotivation.map(d => d.values[1] * -100),
+                backgroundColor: '#ed6f4e',
+                datalabels: { display: false }
+              },
+              {
+                label: 'Stimme überhaupt nicht zu (1)',
+                data: likertDataMotivation.map(d => d.values[0] * -100),
+                backgroundColor: '#8b3bea',
+                datalabels: { display: false }
+              },
+              {
+                label: 'Weder / noch (3) (rechts)',
+                data: likertDataMotivation.map(d => d.values[3] * 100),
+                backgroundColor: '#3d3d3d',
+                datalabels: { display: false }
+              },
+              {
+                label: 'Stimme zu (4)',
+                data: likertDataMotivation.map(d => d.values[4] * 100),
+                backgroundColor: '#4bebb9',
+                datalabels: { display: false }
+              },
+              {
+                label: 'Stimme voll und ganz zu (5)',
+                data: likertDataMotivation.map(d => d.values[5] * 100),
+                backgroundColor: '#1b4d4d',
+                datalabels: { display: false }
+              }
+            ]
+          },
+          options: {
+            indexAxis: 'y',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  color: '#000',
+                  generateLabels: function(chart) {
+                    const all = Chart.defaults.plugins.legend.labels.generateLabels(chart);
+                    const seen = {};
+                    const custom = [];
+                    all.forEach(item => {
+                      if(item.text.startsWith('Weder / noch')) {
+                        if(!seen['weder']) {
+                          custom.push({
+                            ...item,
+                            text: 'Weder / noch (3)',
+                            fillStyle: '#3d3d3d',
+                            strokeStyle: '#3d3d3d'
+                          });
+                          seen['weder'] = true;
+                        }
+                      } else {
+                        custom.push(item);
+                      }
+                    });
+                    const order = [
+                      'Stimme überhaupt nicht zu (1)',
+                      'Stimme nicht zu (2)',
+                      'Weder / noch (3)',
+                      'Stimme zu (4)',
+                      'Stimme voll und ganz zu (5)'
+                    ];
+                    custom.sort((a, b) => order.indexOf(a.text) - order.indexOf(b.text));
+                    return custom;
+                  }
+                }
+              },
+              title: {
+                display: true,
+                text: 'Motivation für wissenschaftliches Arbeiten',
+                color: '#000'
+              },
+              datalabels: {
+                display: false
+              },
+              tooltip: {
+                enabled: true,
+                callbacks: {
+                  label: function(context) {
+                    if(context.dataset.label.startsWith('Weder / noch')) {
+                      const left = Math.abs(likertDataMotivation[context.dataIndex].values[2]*100);
+                      const right = Math.abs(likertDataMotivation[context.dataIndex].values[3]*100);
+                      const sum = left + right;
+                      return 'Weder / noch (3): ' + sum.toFixed(1) + '%';
+                    }
+                    const value = Math.abs(context.raw).toFixed(1);
+                    return context.dataset.label + ': ' + value + '%';
+                  }
+                },
+                backgroundColor: '#fff',
+                titleColor: '#000',
+                bodyColor: '#000',
+                borderColor: '#000',
+                borderWidth: 1
+              }
+            },
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              x: {
+                stacked: true,
+                min: -100,
+                max: 100,
+                ticks: {
+                  color: '#000',
+                  callback: function(value) {
+                    if (value === 0) return '0%';
+                    if (value < 0) return Math.abs(value) + '%';
+                    return value + '%';
+                  }
+                },
+                title: {
+                  display: true,
+                  text: 'Anteil der Antworten',
+                  color: '#000'
+                },
+                grid: { color: 'rgba(0,0,0,0.07)' }
+              },
+              y: {
+                stacked: true,
+                ticks: {
+                  color: '#000',
+                  font: { color: '#000' },
+                  callback: function(value) {
+                    const label = this.getLabelForValue(value);
+                    const maxLen = 40;
+                    if (label.length > maxLen) {
+                      const words = label.split(' ');
+                      let lines = [];
+                      let current = '';
+                      words.forEach(word => {
+                        if ((current + ' ' + word).trim().length > maxLen) {
+                          lines.push(current.trim());
+                          current = word;
+                        } else {
+                          current += ' ' + word;
+                        }
+                      });
+                      if (current) lines.push(current.trim());
+                      return lines;
+                    }
+                    return label;
+                  }
+                },
+                grid: { color: 'rgba(0,0,0,0.07)' },
+                barThickness: 18
+              }
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: true
+            }
+          },
+          plugins: [ChartDataLabels]
+        });
+        </script>
                 <h2>Kontakt</h2>
                 <p>Für weitere Informationen wenden Sie sich bitte an:</p>
-                <p><strong>Frau Katharina Klug</strong></p>
+                <p><strong>Projektteam SciNeW</strong></p>
                 <p>Hochschule Ansbach</p>
-                <p>E-Mail: <a href="mailto:katharina.klug@hs-ansbach.de">katharina.klug@hs-ansbach.de</a></p>
-                <p>Telefon: +49 981 4877-374</p>
+                <p>E-Mail: <a href="mailto:SciNeW@outlook.de">SciNeW@outlook.de</a></p>
                 <p>Adresse: Residenzstraße 8, 91522 Ansbach, Deutschland</p>
-                <p><strong>Janine Riemann</strong></p>
-                <p>E-Mail: <a href="mailto:janine.riemann@hs-ansbach.de">janine.riemann@hs-ansbach.de</a></p>
             </div>
+        </section>
+        <!-- Team-Profile Platzhalter -->
+        <section id="team" class="team" style="background: #f7f7f7; padding: 3em 0;">
+          <div class="container" style="display: flex; justify-content: center; gap: 2em; flex-wrap: wrap;">
+            <!-- Profil 1 -->
+            <div style="width: 160px; text-align: center;">
+              <img src="src/images/profile_placeholder.png" alt="Profilbild" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; background: #ddd; margin-bottom: 1em;" />
+              <div style="font-weight: bold; margin-bottom: 0.5em;">Name 1</div>
+              <a href="mailto:katha@example.com" style="color: #1b4d4d; text-decoration: none;">mail1@example.com</a>
+            </div>
+            <!-- Profil 2 -->
+            <div style="width: 160px; text-align: center;">
+              <img src="src/images/profile_placeholder.png" alt="Profilbild" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; background: #ddd; margin-bottom: 1em;" />
+              <div style="font-weight: bold; margin-bottom: 0.5em;">Name 2</div>
+              <a href="mailto:mail2@example.com" style="color: #1b4d4d; text-decoration: none;">mail2@example.com</a>
+            </div>
+            <!-- Profil 3 -->
+            <div style="width: 160px; text-align: center;">
+              <img src="src/images/profile_placeholder.png" alt="Profilbild" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; background: #ddd; margin-bottom: 1em;" />
+              <div style="font-weight: bold; margin-bottom: 0.5em;">Name 3</div>
+              <a href="mailto:mail3@example.com" style="color: #1b4d4d; text-decoration: none;">mail3@example.com</a>
+            </div>
+            <!-- Profil 4 -->
+            <div style="width: 160px; text-align: center;">
+              <img src="src/images/profile_placeholder.png" alt="Profilbild" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; background: #ddd; margin-bottom: 1em;" />
+              <div style="font-weight: bold; margin-bottom: 0.5em;">Name 4</div>
+              <a href="mailto:mail4@example.com" style="color: #1b4d4d; text-decoration: none;">mail4@example.com</a>
+            </div>
+            <!-- Profil 5 -->
+            <div style="width: 160px; text-align: center;">
+              <img src="src/images/profile_placeholder.png" alt="Profilbild" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; background: #ddd; margin-bottom: 1em;" />
+              <div style="font-weight: bold; margin-bottom: 0.5em;">Name 5</div>
+              <a href="mailto:mail5@example.com" style="color: #1b4d4d; text-decoration: none;">mail5@example.com</a>
+            </div>
+          </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 SciNeW. Alle Rechte vorbehalten.</p>
-            <p><a href="#contact">Kontaktieren Sie uns</a>.</p>
+            <p>&copy; 2025 SciNeW - Scientific New Working. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
-</body>
+
+    <!-- Chart.js und ChartDataLabels Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script>
+      // Selbstwirksamkeit/LoC/Bedenk Chart
+      const ctxLoc = document.getElementById('likertChartLoc').getContext('2d');
+      const likertDataLoc = [
+        {
+          label: 'Wenn ich Schwierigkeiten im wissenschaftlichen Arbeiten habe, finde ich eine Lösung.',
+          values: [0, 0.083333333, 0.222222222/2, 0.222222222/2, 0.583333333, 0.111111111]
+        },
+        {
+          label: 'Ich bin in der Lage, meine Fähigkeiten im wissenschaftlichen Arbeiten kontinuierlich zu verbessern.',
+          values: [0, 0.090909091, 0.181818182/2, 0.181818182/2, 0.606060606, 0.121212121]
+        },
+        {
+          label: 'Ob ich wissenschaftliches Arbeiten gut beherrsche, hängt vor allem von meinen eigenen Bemühungen ab.',
+          values: [0, 0.085714286, 0.2/2, 0.2/2, 0.6, 0.114285714]
+        },
+        {
+          label: 'Mein Erfolg im Fach wissenschaftliches Arbeiten hängt davon ab, wie gut die Lehrenden es erklären.',
+          values: [0, 0.088235294, 0.205882353/2, 0.205882353/2, 0.588235294, 0.117647059]
+        },
+        {
+          label: 'Ob ich wissenschaftliches Arbeiten gut beherrsche, ist größtenteils eine Frage des Glücks.',
+          values: [0, 0.083333333, 0.222222222/2, 0.222222222/2, 0.583333333, 0.111111111]
+        },
+        {
+          label: 'Ich habe Angst, wissenschaftliche Arbeiten nicht korrekt zu verfassen.',
+          values: [0, 0.083333333, 0.222222222/2, 0.222222222/2, 0.583333333, 0.111111111]
+        },
+        {
+          label: 'Ich fühle mich gestresst, wenn ich an die Anforderungen des wissenschaftlichen Arbeitens denke.',
+          values: [0, 0.083333333, 0.222222222/2, 0.222222222/2, 0.583333333, 0.111111111]
+        },
+        {
+          label: 'Ich habe Sorge, dass ich bei wissenschaftlichen Arbeiten plagiiere, ohne es zu merken.',
+          values: [0, 0.083333333, 0.222222222/2, 0.222222222/2, 0.583333333, 0.111111111]
+        }
+      ];
+      const labelsLoc = likertDataLoc.map(d => d.label);
+      new Chart(ctxLoc, {
+        type: 'bar',
+        data: {
+          labels: labelsLoc,
+          datasets: [
+            {
+              label: 'Weder / noch (3) (links)',
+              data: likertDataLoc.map(d => d.values[2] * -100),
+              backgroundColor: '#3d3d3d',
+              datalabels: { display: false }
+            },
+            {
+              label: 'Stimme nicht zu (2)',
+              data: likertDataLoc.map(d => d.values[1] * -100),
+              backgroundColor: '#ed6f4e',
+              datalabels: { display: false }
+            },
+            {
+              label: 'Stimme überhaupt nicht zu (1)',
+              data: likertDataLoc.map(d => d.values[0] * -100),
+              backgroundColor: '#8b3bea',
+              datalabels: { display: false }
+            },
+            {
+              label: 'Weder / noch (3) (rechts)',
+              data: likertDataLoc.map(d => d.values[3] * 100),
+              backgroundColor: '#3d3d3d',
+              datalabels: { display: false }
+            },
+            {
+              label: 'Stimme zu (4)',
+              data: likertDataLoc.map(d => d.values[4] * 100),
+              backgroundColor: '#4bebb9',
+              datalabels: { display: false }
+            },
+            {
+              label: 'Stimme voll und ganz zu (5)',
+              data: likertDataLoc.map(d => d.values[5] * 100),
+              backgroundColor: '#1b4d4d',
+              datalabels: { display: false }
+            }
+          ]
+        },
+        options: {
+          indexAxis: 'y',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                color: '#000',
+                generateLabels: function(chart) {
+                  const all = Chart.defaults.plugins.legend.labels.generateLabels(chart);
+                  const seen = {};
+                  const custom = [];
+                  all.forEach(item => {
+                    if(item.text.startsWith('Weder / noch')) {
+                      if(!seen['weder']) {
+                        custom.push({
+                          ...item,
+                          text: 'Weder / noch (3)',
+                          fillStyle: '#3d3d3d',
+                          strokeStyle: '#3d3d3d'
+                        });
+                        seen['weder'] = true;
+                      }
+                    } else {
+                      custom.push(item);
+                    }
+                  });
+                  const order = [
+                    'Stimme überhaupt nicht zu (1)',
+                    'Stimme nicht zu (2)',
+                    'Weder / noch (3)',
+                    'Stimme zu (4)',
+                    'Stimme voll und ganz zu (5)'
+                  ];
+                  custom.sort((a, b) => order.indexOf(a.text) - order.indexOf(b.text));
+                  return custom;
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: 'Selbstwirksamkeit, Kontrollüberzeugungen & Bedenken',
+              color: '#000'
+            },
+            datalabels: {
+              display: false
+            },
+            tooltip: {
+              enabled: true,
+              callbacks: {
+                label: function(context) {
+                  if(context.dataset.label.startsWith('Weder / noch')) {
+                    const left = Math.abs(likertDataLoc[context.dataIndex].values[2]*100);
+                    const right = Math.abs(likertDataLoc[context.dataIndex].values[3]*100);
+                    const sum = left + right;
+                    return 'Weder / noch (3): ' + sum.toFixed(1) + '%';
+                  }
+                  const value = Math.abs(context.raw).toFixed(1);
+                  return context.dataset.label + ': ' + value + '%';
+                }
+              },
+              backgroundColor: '#fff',
+              titleColor: '#000',
+              bodyColor: '#000',
+              borderColor: '#000',
+              borderWidth: 1
+            }
+          },
+          responsive: true,
+          maintainAspectRatio: true,
+          scales: {
+            x: {
+              stacked: true,
+              min: -100,
+              max: 100,
+              ticks: {
+                color: '#000',
+                callback: function(value) {
+                  if (value === 0) return '0%';
+                  if (value < 0) return Math.abs(value) + '%';
+                  return value + '%';
+                }
+              },
+              title: {
+                display: true,
+                text: 'Anteil der Antworten',
+                color: '#000'
+              },
+              grid: { color: 'rgba(0,0,0,0.07)' }
+            },
+            y: {
+              stacked: true,
+              ticks: {
+                color: '#000',
+                font: { color: '#000' },
+                callback: function(value) {
+                  const label = this.getLabelForValue(value);
+                  const maxLen = 40;
+                  if (label.length > maxLen) {
+                    const words = label.split(' ');
+                    let lines = [];
+                    let current = '';
+                    words.forEach(word => {
+                      if ((current + ' ' + word).trim().length > maxLen) {
+                        lines.push(current.trim());
+                        current = word;
+                      } else {
+                        current += ' ' + word;
+                      }
+                    });
+                    if (current) lines.push(current.trim());
+                    return lines;
+                  }
+                  return label;
+                }
+              },
+              grid: { color: 'rgba(0,0,0,0.07)' },
+              barThickness: 18
+            }
+          },
+          hover: {
+            mode: 'nearest',
+            intersect: true
+          }
+        },
+        plugins: [ChartDataLabels]
+      });
+      </script>
+  </body>
 </html>
